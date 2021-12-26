@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: lightgray;
+
+  .imageGallery {
+    background-color: white;
+    flex: 1 1 20%;
+    margin: 1rem;
+    border-radius: 4px;
+
+    .imgContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 90%;
+        height: auto;
+        margin: .5rem;
+
+      }
+
+    }
+
+    img {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  .mainCard {
+    background-color: white;
+    flex: 1 1 50%;
+    margin: 1rem;
+    border-radius: 4px;
+
+    .titleCard {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 4rem;
+    }
+
+    .cardImg {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+      border: 4px solid purple;
+
+      .selected {
+        width: 100%;
+        height: 100%;
+      }
+
+    }
+
+    .customText {
+      position: relative;
+      text-align: center;
+      display: flex;
+      align-items: center;
+
+      flex-direction: column;
+
+      .mainText {
+        z-index: 1;
+        position: absolute;
+        top: -220px;
+
+        p{
+          font-size: 25px;
+        }
+
+      }
+
+      .signatureText {
+        position: absolute;
+        top: -45px;
+      }
+
+    }
+
+  }
+
+  .sideEditor {
+    background-color: white;
+    flex: 1 1 30%;
+    margin: 1rem;
+    border-radius: 4px;
+  }
+}
+

@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState} from "react";
+import './App.scss';
+import {SideImageGallery} from "./components/SideImageGallery";
+import {MainCard} from "./components/MainCard";
+import {SideEditor} from "./components/SideEditor";
+import Images from "./Images";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const [selectedImg, setSelectedImg] = useState(Images[0])
+
+
+    return (
+        <div className="App">
+            <SideImageGallery setImage = {setSelectedImg}/>
+            <MainCard selectedimage={ selectedImg }/>
+            <SideEditor/>
+        </div>
+    );
 }
 
 export default App;
