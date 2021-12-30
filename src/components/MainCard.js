@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Images from "../Images";
 
 
-export function MainCard({selectedImage, mainTextSet, signText}) {
+export function MainCard({selectedImage, mainTextSet, signText, textSizeProp}) {
 
 
     return (
@@ -17,7 +17,7 @@ export function MainCard({selectedImage, mainTextSet, signText}) {
             </div>
             <div className='customText'>
                 <div className='mainText'>
-                    <p>{mainTextSet}</p>
+                    <p style={{fontSize: textSizeProp}}>{mainTextSet}</p>
                 </div>
                 <div className='signatureText'>
                     <p>{signText}</p>
