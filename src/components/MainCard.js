@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Images from "../Images";
 
 
-export function MainCard({selectedimage}) {
+export function MainCard({selectedImage, mainTextSet, signText}) {
 
 
     return (
@@ -13,14 +13,14 @@ export function MainCard({selectedimage}) {
                 Greeting Card App
             </h2>
             <div className='cardImg'>
-                <img src={selectedimage} alt="Selected" className='selected'/>
+                <img src={selectedImage} alt="Selected" className='selected'/>
             </div>
             <div className='customText'>
                 <div className='mainText'>
-                    <p>Main Text </p>
+                    <p>{mainTextSet}</p>
                 </div>
                 <div className='signatureText'>
-                    <p>Signature text dwadwada sadwa</p>
+                    <p>{signText}</p>
                 </div>
             </div>
         </div>
