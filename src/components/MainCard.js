@@ -1,9 +1,12 @@
 import React, {useState} from "react";
+import App from "../App";
 import Images from "../Images";
+import { CompactPicker } from 'react-color';
+import {SideEditor} from "./SideEditor";
 
 
-export function MainCard({selectedImage, mainTextSet, signText, textSizeProp}) {
-
+export function MainCard({selectedImage, mainTextSet, signText, textSizeProp, color}) {
+    console.log(color)
 
     return (
 
@@ -16,12 +19,13 @@ export function MainCard({selectedImage, mainTextSet, signText, textSizeProp}) {
                 <img src={selectedImage} alt="Selected" className='selected'/>
             </div>
             <div className='customText'>
-                <div className='mainText'>
+                <div style={{color}} className='mainText'>
                     <p style={{fontSize: textSizeProp}}>{mainTextSet}</p>
                 </div>
                 <div className='signatureText'>
                     <p>{signText}</p>
                 </div>
+
             </div>
         </div>
     )
