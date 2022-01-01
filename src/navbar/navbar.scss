@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-menu {
+  background-color: darkgray;
+
+  .navbar {
+    height: 10vh;
+    width: 1280px;
+    //border: 2px solid red;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    .menu {
+
+      li {
+        display: inline-block;
+        text-decoration: none;
+      }
+
+    }
+  }
+}

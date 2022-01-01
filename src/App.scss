@@ -4,11 +4,22 @@
   padding: 0;
 }
 
+.container {
+  background-color: lightgray;
+
+}
+
+
 .App {
   display: flex;
-  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   height: 100vh;
   background-color: lightgray;
+
+  .colorPicker{
+   padding-left: 1rem;
+  }
 
   .imageGallery {
     background-color: white;
@@ -71,7 +82,6 @@
       text-align: center;
       display: flex;
       align-items: center;
-
       flex-direction: column;
 
       .mainText {
@@ -79,10 +89,12 @@
         position: absolute;
         top: -260px;
         //border: 2px solid red;
-        max-width: 15rem;
-
-        p{
+        max-width: 13rem;
+        word-break: break-word;
+        p {
           font-size: 48px;
+          position: center;
+          margin: 0 auto;
 
         }
 
@@ -91,6 +103,8 @@
       .signatureText {
         position: absolute;
         top: -45px;
+        max-width: 20rem;
+        //border: 2px solid red;
       }
 
     }
@@ -102,6 +116,21 @@
     flex: 1 1 30%;
     margin: 1rem;
     border-radius: 4px;
+
+    .editorSettings {
+      margin: 1rem;
+
+      input{
+        width: 100%;
+        height: 2rem;
+      }
+
+      h4{
+        margin-top: 1rem;
+      }
+    }
+
+
   }
 }
 

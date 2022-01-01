@@ -5,6 +5,7 @@ import {MainCard} from "./components/MainCard";
 import {SideEditor} from "./components/SideEditor";
 import Images from "./Images";
 import {CompactPicker} from 'react-color';
+import {Navbar} from "./navbar/Navbar";
 
 function App() {
     const [selectedImg, setSelectedImg] = useState(Images[0]);
@@ -29,30 +30,36 @@ function App() {
         return parseInt(textSize);
     }
 
-    
+
     return (
-        <div className="App">
-            <SideImageGallery setImage={setSelectedImg}/>
+        <div className='container'>
+            <Navbar/>
 
-            <MainCard selectedImage={selectedImg}
-                      mainTextSet={mainTextValue}
-                      signText={signatureTextValue}
-                      textSizeProp={formatText()}
-                      color = {color}/>
+            <div className="App">
+                <SideImageGallery setImage={setSelectedImg}/>
+
+                <MainCard selectedImage={selectedImg}
+                          mainTextSet={mainTextValue}
+                          signText={signatureTextValue}
+                          textSizeProp={formatText()}
+                          color={color}/>
 
 
-            <div className='sideEditor'>
-                <SideEditor mainTextIs={handleMainText}
-                            sigText={handleSignatureText}
-                            textSizePropChange={handleTextSize}/>
+                <div className='sideEditor'>
+                    <SideEditor mainTextIs={handleMainText}
+                                sigText={handleSignatureText}
+                                textSizePropChange={handleTextSize}/>
 
-                <CompactPicker
-                    color={color}
-                    onChangeComplete={(color) => {
-                        setColor(color.hex)
-                    }}
-                />
+                    <div className='colorPicker'>
+                    <CompactPicker
+                        color={color}
+                        onChangeComplete={(color) => {
+                            setColor(color.hex)
+                        }}
+                    />
+                    </div>
 
+                </div>
             </div>
         </div>
     );
