@@ -33,7 +33,7 @@ function App() {
 
     return (
         <div className='container'>
-            <Navbar/>
+
 
             <div className="App">
                 <SideImageGallery setImage={setSelectedImg}/>

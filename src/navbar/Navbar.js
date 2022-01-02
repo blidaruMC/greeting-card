@@ -1,5 +1,6 @@
 import React from "react";
 import './navbar.scss'
+import {NavLink} from "react-router-dom";
 
 export function Navbar() {
 
@@ -12,10 +13,10 @@ export function Navbar() {
                 <div className='menu'>
                     <ul>
                         <li className="menu-items">
-                            <a href="#">CARD DESIGN</a>
+                            <NavLink activeClassName={'active'} to={'/'}>CARD DESIGN</NavLink>
                         </li>
                         <li className="menu-items">
-                            <a href="#">CONTACT</a>
+                            <NavLink activeClassName={'active'} to={'/contact'}>CONTACT</NavLink>
                         </li>
                     </ul>
                 </div>
