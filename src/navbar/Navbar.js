@@ -13,10 +13,10 @@ export function Navbar() {
                 <div className='menu'>
                     <ul>
                         <li className="menu-items">
-                            <NavLink activeClassName={'active'} to={'/'}>CARD DESIGN</NavLink>
+                            <NavLink  to={'/'}>CARD DESIGN</NavLink>
                         </li>
                         <li className="menu-items">
-                            <NavLink activeClassName={'active'} to={'/contact'}>CONTACT</NavLink>
+                            <NavLink  to={'/contact'}>CONTACT</NavLink>
                         </li>
                     </ul>
                 </div>

@@ -15,7 +15,7 @@ ReactDOM.render(
                 <div className='allPages'>
 
                     <Routes>
-                        <Route path='/' element={<App/>}/>
+                        <Route exact path='/' element={<App/>}/>
                         <Route path='/contact' element={<Contact/>}/>
                     </Routes>
 
