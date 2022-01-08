@@ -1,25 +1,26 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import './App.scss';
 import {SideImageGallery} from "./components/SideImageGallery";
 import {MainCard} from "./components/MainCard";
 import {SideEditor} from "./components/SideEditor";
 import Images from "./Images";
 import {CompactPicker} from 'react-color';
-import {Navbar} from "./navbar/Navbar";
+
 
 function App() {
     const [selectedImg, setSelectedImg] = useState(Images[0]);
     const [mainTextValue, setMainTextValue] = useState('');
     const [signatureTextValue, setSignatureTextValue] = useState('');
     const [textSize, setTextSize] = useState(48);
-    const [color, setColor] = useState('white');
+    const [color, setColor] = useState('');
+    const [quote, setQuote] = useState('')
 
     const handleMainText = (e) => {
         setMainTextValue(e.target.value);
     }
 
     const handleSignatureText = (e) => {
-        setSignatureTextValue(e.target.value);
+        // setSignatureTextValue(e.target.value);
     }
 
     const handleTextSize = (e) => {
@@ -29,6 +30,22 @@ function App() {
     function formatText() {
         return parseInt(textSize);
     }
+
+    const getAdvice = () => {
+        fetch(`https://api.adviceslip.com/advice`)
+            .then(response => response.json())
+            .then(res => {
+                const {advice} = res.slip;
+                console.log(advice)
+                setQuote(advice)
+
+            })
+    }
+
+    useEffect(() => {
+        getAdvice();
+
+    }, []);
 
 
     return (
@@ -42,21 +59,24 @@ function App() {
                           mainTextSet={mainTextValue}
                           signText={signatureTextValue}
                           textSizeProp={formatText()}
-                          color={color}/>
+                          color={color}
+                          quote={quote}
+                />
 
 
                 <div className='sideEditor'>
                     <SideEditor mainTextIs={handleMainText}
                                 sigText={handleSignatureText}
+                                newQuote = {getAdvice}
                                 textSizePropChange={handleTextSize}/>
 
                     <div className='colorPicker'>
-                    <CompactPicker
-                        color={color}
-                        onChangeComplete={(color) => {
-                            setColor(color.hex)
-                        }}
-                    />
+                        <CompactPicker
+                            color={color}
+                            onChangeComplete={(color) => {
+                                setColor(color.hex)
+                            }}
+                        />
                     </div>
 
                 </div>

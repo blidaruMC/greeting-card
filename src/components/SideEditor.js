@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {CompactPicker} from 'react-color';
 import {MainCard} from "./MainCard";
 
-export function SideEditor({mainTextIs, sigText, textSizePropChange}) {
+export function SideEditor({mainTextIs, sigText, textSizePropChange, newQuote}) {
 
 
     return (
@@ -20,6 +20,7 @@ export function SideEditor({mainTextIs, sigText, textSizePropChange}) {
                    type="text"
                    className='insertSignature'
                    placeholder='Your signature'/>
+            <button onClick={newQuote}>Random advice</button>
 
             <h4>Text size</h4>
             <input onChange={textSizePropChange}
@@ -29,6 +30,7 @@ export function SideEditor({mainTextIs, sigText, textSizePropChange}) {
                    max='48'/>
             <hr/>
             <h4>Text Color</h4>
+
 
         </div>
     )

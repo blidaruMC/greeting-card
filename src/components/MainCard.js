@@ -5,7 +5,7 @@ import { CompactPicker } from 'react-color';
 import {SideEditor} from "./SideEditor";
 
 
-export function MainCard({selectedImage, mainTextSet, signText, textSizeProp, color}) {
+export function MainCard({selectedImage, mainTextSet, signText, textSizeProp, color, quote}) {
     console.log(color)
 
     return (
@@ -23,7 +23,7 @@ export function MainCard({selectedImage, mainTextSet, signText, textSizeProp, co
                     <p style={{fontSize: textSizeProp}}>{mainTextSet}</p>
                 </div>
                 <div className='signatureText'>
-                    <p>{signText}</p>
+                    <p dangerouslySetInnerHTML={{__html: quote}}/>
                 </div>
 
             </div>
