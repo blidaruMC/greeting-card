@@ -15,11 +15,12 @@ export function SideEditor({mainTextIs, sigText, textSizePropChange, newQuote}) 
                    placeholder='Write text'/>
 
 
-            <h4>Signature:</h4>
-            <input onChange={sigText}
-                   type="text"
-                   className='insertSignature'
-                   placeholder='Your signature'/>
+            {/*<h4>Signature:</h4>*/}
+            {/*<input onChange={sigText}*/}
+            {/*       type="text"*/}
+            {/*       className='insertSignature'*/}
+            {/*       placeholder='Your signature'/>*/}
+            <h4>Add random advice</h4>
             <button onClick={newQuote}>Random advice</button>
 
             <h4>Text size</h4>

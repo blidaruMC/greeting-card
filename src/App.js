@@ -37,7 +37,10 @@ function App() {
             .then(res => {
                 const {advice} = res.slip;
                 console.log(advice)
-                setQuote(advice)
+                if(advice.length <= 100) {
+                    setQuote(advice)
+                }
+
 
             })
     }

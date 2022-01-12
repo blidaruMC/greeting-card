@@ -1,8 +1,5 @@
-import React, {useState} from "react";
-import App from "../App";
-import Images from "../Images";
-import { CompactPicker } from 'react-color';
-import {SideEditor} from "./SideEditor";
+import React from "react";
+
 
 
 export function MainCard({selectedImage, mainTextSet, signText, textSizeProp, color, quote}) {
