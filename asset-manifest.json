@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/greeting-card/static/css/main.5f29d49f.css",
+    "main.js": "/greeting-card/static/js/main.f2b99aa7.js",
+    "index.html": "/greeting-card/index.html",
+    "main.5f29d49f.css.map": "/greeting-card/static/css/main.5f29d49f.css.map",
+    "main.f2b99aa7.js.map": "/greeting-card/static/js/main.f2b99aa7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f29d49f.css",
+    "static/js/main.f2b99aa7.js"
+  ]
+}
